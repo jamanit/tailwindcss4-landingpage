@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png" />
-    <!-- Meta Description -->
     <meta name="description" content="Discover various smart and handy tools, all free and instantly accessible." />
-    <!-- Meta Keywords (optional) -->
     <meta name="keywords" content="jaman it, tools online" />
     <meta name="author" content="Jaman IT Team" />
-
-    <!-- Open Graph Tags (untuk preview di WA, FB, dll) -->
-    <meta property="og:title" content="RD - Explore Our Free Online Tools" />
+    <meta property="og:title" content="Jaman IT - Explore Our Free Online Tools" />
     <meta property="og:description" content="Discover various smart and handy tools, all free and instantly accessible." />
     <meta property="og:image" content="images/favicon.png" />
-    <meta property="og:url" content="https://rport.my.id" />
+    <meta property="og:url" content="https://website.co.id" />
     <meta property="og:type" content="website" />
 
-    <title>RD - Explore Our Free Online Tools</title>
+    <title>Jaman IT - Explore Our Free Online Tools</title>
+
+    <link rel="icon" href="images/favicon.png" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,13 +58,16 @@
             <!-- Menu desktop -->
             <ul x-data="{ active: 'Home', activeSub: '' }" class="hidden md:flex items-center space-x-6 font-medium">
               <li>
-                <a href="#" @click.prevent="active = 'Home'; activeSub = ''" :class="active === 'Home' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">Home</a>
+                <a href="#home" @click="active = 'Home'; activeSub = ''" :class="active === 'Home' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">Home</a>
               </li>
               <li>
-                <a href="#" @click.prevent="active = 'About'; activeSub = ''" :class="active === 'About' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">About</a>
+                <a href="#post" @click="active = 'Post'; activeSub = ''" :class="active === 'Post' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">Post</a>
               </li>
               <li>
-                <a href="#" @click.prevent="active = 'Contact'; activeSub = ''" :class="active === 'Contact' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">Contact</a>
+                <a href="#about" @click="active = 'About'; activeSub = ''" :class="active === 'About' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">About</a>
+              </li>
+              <li>
+                <a href="#contact" @click="active = 'Contact'; activeSub = ''" :class="active === 'Contact' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300">Contact</a>
               </li>
               <li class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                 <button @click.prevent="active = 'Tools'" :class="active === 'Tools' ? 'bg-pink-500' : ''" class="p-2 text-white hover:bg-pink-500 rounded-lg transition duration-300 inline-flex items-center gap-1">
@@ -79,19 +78,19 @@
                 </button>
                 <ul x-show="open" x-transition class="absolute z-20 left-0 mt-2 w-40 bg-slate-800 text-white rounded-lg shadow-lg transition duration-300 overflow-hidden">
                   <li>
-                    <a href="#" @click.prevent="active = 'Tools'; activeSub = 'Chat AI'" :class="activeSub === 'Chat AI' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Chat AI</a>
+                    <a href="#" @click="active = 'Tools'; activeSub = 'Chat AI'" :class="activeSub === 'Chat AI' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Chat AI</a>
                   </li>
                   <li>
-                    <a href="#" @click.prevent="active = 'Tools'; activeSub = 'JPG to PDF'" :class="activeSub === 'JPG to PDF' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">JPG to PDF</a>
+                    <a href="#" @click="active = 'Tools'; activeSub = 'JPG to PDF'" :class="activeSub === 'JPG to PDF' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">JPG to PDF</a>
                   </li>
                   <li>
-                    <a href="#" @click.prevent="active = 'Tools'; activeSub = 'Word to PDF'" :class="activeSub === 'Word to PDF' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Word to PDF</a>
+                    <a href="#" @click="active = 'Tools'; activeSub = 'Word to PDF'" :class="activeSub === 'Word to PDF' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Word to PDF</a>
                   </li>
                   <li>
-                    <a href="#" @click.prevent="active = 'Tools'; activeSub = 'Image Compressor'" :class="activeSub === 'Image Compressor' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Image Compressor</a>
+                    <a href="#" @click="active = 'Tools'; activeSub = 'Image Compressor'" :class="activeSub === 'Image Compressor' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">Image Compressor</a>
                   </li>
                   <li>
-                    <a href="#" @click.prevent="active = 'Tools'; activeSub = 'View All Tools'" :class="activeSub === 'View All Tools' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">View All Tools</a>
+                    <a href="#" @click="active = 'Tools'; activeSub = 'View All Tools'" :class="activeSub === 'View All Tools' ? 'bg-pink-500' : ''" class="block px-4 py-2 hover:bg-pink-500 transition duration-200">View All Tools</a>
                   </li>
                 </ul>
               </li>
@@ -121,7 +120,7 @@
         </div>
         <ul x-data="{ active: '', activeDropdown: '' }" class="p-6 space-y-3 font-medium">
           <li>
-            <a href="#" @click.prevent="active = 'Home'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'Home' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
+            <a href="#" @click="active = 'Home'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'Home' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -148,12 +147,28 @@
             </a>
           </li>
           <li>
-            <a href="#" @click.prevent="active = 'About'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'About' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
+            <a href="#post" @click="active = 'Post'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'Post' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM5 4C4.44772 4 4 4.44772 4 5V10H20V5C20 4.44772 19.5523 4 19 4H5ZM4 12V19C4 19.5523 4.44772 20 5 20H19C19.5523 20 20 19.5523 20 19V12H4ZM14 13C14.2652 13 14.5196 13.1054 14.7071 13.2929L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L14 15.4142L11.7071 17.7071L10.7071 18.7071C10.3166 19.0976 9.68342 19.0976 9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.29289 17.2929L9.58579 17L9 16.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L8.29289 14.2929C8.48043 14.1054 8.73478 14 9 14C9.26522 14 9.51957 14.1054 9.70711 14.2929L11 15.5858L13.2929 13.2929C13.4804 13.1054 13.7348 13 14 13ZM11 7C11 6.44772 11.4477 6 12 6H17C17.5523 6 18 6.44772 18 7C18 7.55228 17.5523 8 17 8H12C11.4477 8 11 7.55228 11 7ZM7 8.75C7.9665 8.75 8.75 7.9665 8.75 7C8.75 6.0335 7.9665 5.25 7 5.25C6.0335 5.25 5.25 6.0335 5.25 7C5.25 7.9665 6.0335 8.75 7 8.75Z"
+                    fill="#ffffff"
+                  ></path>
+                </g>
+              </svg>
+              Post
+            </a>
+          </li>
+          <li>
+            <a href="#about" @click="active = 'About'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'About' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
               <svg class="h-6 w-6" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
-                  <title>about</title>
                   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="about-white" fill="#ffffff" transform="translate(42.666667, 42.666667)">
                       <path
@@ -168,7 +183,7 @@
             </a>
           </li>
           <li>
-            <a href="#" @click.prevent="active = 'Contact'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'Contact' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
+            <a href="#contact" @click="active = 'Contact'; activeDropdown = ''; activeDropdownLink = ''; sidebarOpen = false" :class="active === 'Contact' ? 'bg-violet-500' : ''" class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
               <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -186,7 +201,7 @@
             </a>
           </li>
           <li>
-            <button @click="active = 'Tools'; activeDropdown = activeDropdown === 'Tools' ? '' : 'Tools'" :class="active === 'Tools' ? 'bg-violet-500' : ''" class="flex justify-between items-center w-full px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
+            <button @click.prevent="active = 'Tools'; activeDropdown = activeDropdown === 'Tools' ? '' : 'Tools'" :class="active === 'Tools' ? 'bg-violet-500' : ''" class="flex justify-between items-center w-full px-4 py-2 rounded-lg hover:bg-violet-500 transition duration-300">
               <div class="flex items-center gap-2">
                 <svg class="h-6 w-6" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
                   <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -213,31 +228,31 @@
             </button>
             <ul x-show="activeDropdown === 'Tools'" x-transition class="mt-1 space-y-1 bg-white text-black rounded-lg shadow-lg p-4">
               <li>
-                <a href="#" @click.prevent="activeDropdownLink = 'Chat AI'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
+                <a href="#" @click="activeDropdownLink = 'Chat AI'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
                   Chat AI
                   <span class="absolute left-0 bottom-0 h-[2px] bg-violet-500 transition-all duration-300 ease-in-out" :class="activeDropdownLink === 'Chat AI' ? 'w-full' : 'w-0 group-hover:w-full'"></span>
                 </a>
               </li>
               <li>
-                <a href="#" @click.prevent="activeDropdownLink = 'JPG to PDF'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
+                <a href="#" @click="activeDropdownLink = 'JPG to PDF'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
                   JPG to PDF
                   <span class="absolute left-0 bottom-0 h-[2px] bg-violet-500 transition-all duration-300 ease-in-out" :class="activeDropdownLink === 'JPG to PDF' ? 'w-full' : 'w-0 group-hover:w-full'"></span>
                 </a>
               </li>
               <li>
-                <a href="#" @click.prevent="activeDropdownLink = 'Word to PDF'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
+                <a href="#" @click="activeDropdownLink = 'Word to PDF'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
                   Word to PDF
                   <span class="absolute left-0 bottom-0 h-[2px] bg-violet-500 transition-all duration-300 ease-in-out" :class="activeDropdownLink === 'Word to PDF' ? 'w-full' : 'w-0 group-hover:w-full'"></span>
                 </a>
               </li>
               <li>
-                <a href="#" @click.prevent="activeDropdownLink = 'Image Compressor'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
+                <a href="#" @click="activeDropdownLink = 'Image Compressor'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
                   Image Compressor
                   <span class="absolute left-0 bottom-0 h-[2px] bg-violet-500 transition-all duration-300 ease-in-out" :class="activeDropdownLink === 'Image Compressor' ? 'w-full' : 'w-0 group-hover:w-full'"></span>
                 </a>
               </li>
               <li>
-                <a href="#" @click.prevent="activeDropdownLink = 'View All Tools'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
+                <a href="#" @click="activeDropdownLink = 'View All Tools'; sidebarOpen = false" class="group relative inline-block py-1 text-sm font-medium text-black transition duration-300 hover:text-violet-700">
                   View All Tools
                   <span class="absolute left-0 bottom-0 h-[2px] bg-violet-500 transition-all duration-300 ease-in-out" :class="activeDropdownLink === 'View All Tools' ? 'w-full' : 'w-0 group-hover:w-full'"></span>
                 </a>
@@ -253,13 +268,12 @@
 
     <main class="flex-grow">
       <!-- Hero Section -->
-      <section class="py-32 min-h-screen bg-[url('/images/space-bg.jpg')] bg-cover bg-center relative">
+      <section id="home" class="py-32 min-h-screen bg-[url('/images/space-bg.jpg')] bg-cover bg-center relative">
         <div class="absolute inset-0 bg-black/50"></div>
         <div class="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-20 text-center">
           <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500 mb-4">Explore Our Free Online Tools</h1>
           <p class="text-lg text-gray-300 mb-8">Discover various smart and handy tools, all free and instantly accessible.</p>
 
-          <!-- Tombol-tombol produk -->
           <div class="flex flex-wrap justify-center gap-4">
             <a href="#" class="px-5 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-full transition shadow-lg animate-bounce">Chat AI</a>
             <a href="#" class="px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition shadow-lg animate-bounce">Word to PDF</a>
@@ -267,19 +281,17 @@
             <a href="#" class="px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full transition shadow-lg animate-bounce">Image Compressor</a>
           </div>
 
-          <!-- Tombol CTA -->
           <div class="mt-10">
             <a href="#" class="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-pink-500 text-white font-semibold rounded-full hover:scale-105 transform transition shadow-lg">Explore Tools</a>
           </div>
         </div>
       </section>
 
-      <!-- Konten -->
-      <section class="py-24">
+      <!-- Posts Section -->
+      <section id="post" class="py-24">
         <div class="px-4 sm:px-6 lg:px-12 xl:px-20">
           <h2 class="text-2xl font-bold mb-6 text-white">Latest Posts</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-            <!-- Post 1 -->
             <a href="#" class="group block bg-slate-800 rounded-lg overflow-hidden shadow-lg transition hover:scale-[1.02] duration-300 cursor-pointer">
               <img src="https://dummyimage.com/300" alt="Post 1" class="w-full h-56 object-cover" />
               <div class="p-6">
@@ -289,7 +301,6 @@
               </div>
             </a>
 
-            <!-- Post 2 -->
             <a href="#" class="group block bg-slate-800 rounded-lg overflow-hidden shadow-lg transition hover:scale-[1.02] duration-300 cursor-pointer">
               <img src="https://dummyimage.com/640x4:3/" alt="Post 2" class="w-full h-56 object-cover" />
               <div class="p-6">
@@ -299,7 +310,6 @@
               </div>
             </a>
 
-            <!-- Post 3 -->
             <a href="#" class="group block bg-slate-800 rounded-lg overflow-hidden shadow-lg transition hover:scale-[1.02] duration-300 cursor-pointer">
               <img src="https://dummyimage.com/640x4:3/" alt="Post 3" class="w-full h-56 object-cover" />
               <div class="p-6">
@@ -310,9 +320,73 @@
             </a>
           </div>
 
-          <!-- View All Button -->
           <div class="text-center">
             <a href="#" class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-pink-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition duration-300">View All Posts</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Sectionn -->
+      <section id="about" class="py-24 bg-slate-900">
+        <div class="relative z-10 px-4 sm:px-6 lg:px-12 xl:px-20 text-center">
+          <img src="/images/logo.png" alt="Logo" class="mx-auto h-20 mb-6 rounded-xl shadow-lg" />
+          <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500 mb-4">About Jaman IT</h1>
+          <div class="text-lg text-gray-300 max-w-3xl mx-auto mb-10">
+            <p>Jaman IT menyediakan berbagai alat online gratis yang memudahkan hidup Anda. Mulai dari kompresi gambar, konversi dokumen, hingga layanan berbasis AI — semua tersedia secara instan dan tanpa biaya. Kami percaya bahwa teknologi harus dapat diakses oleh siapa saja, kapan saja.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24">
+        <div class="px-4 sm:px-6 lg:px-12 xl:px-20 max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-6 text-white">Contact Us</h2>
+          <p class="text-center text-gray-400 mb-12">Have questions or feedback? We'd love to hear from you. Get in touch through the form or via our contact details below.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" class="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-500" />
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message..." class="w-full px-4 py-2 rounded-lg bg-slate-800 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+              </div>
+
+              <div>
+                <button type="submit" class="cursor-pointer w-full px-6 py-3 bg-gradient-to-r from-violet-600 to-pink-500 text-white font-semibold rounded-lg hover:scale-105 transition duration-300">Send Message</button>
+              </div>
+            </form>
+
+            <div class="bg-slate-800 rounded-xl p-6 text-gray-300 space-y-6">
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Office Address</h3>
+                <p>Simp. Rimbo Kota Jambi, Indonesia 36129</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Email</h3>
+                <p><a href="mailto:itservice.jaman@gmail.com" class="text-pink-400 hover:underline">itservice.jaman@gmail.com</a></p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Phone</h3>
+                <p><a href="tel:+6289508475453" class="text-pink-400 hover:underline">+62 895-0847-5453</a></p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold mb-2 text-white">Working Hours</h3>
+                <p>
+                  Monday - Friday: 9:00 AM to 6:00 PM
+                  <br />
+                  Saturday - Sunday: Closed
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
